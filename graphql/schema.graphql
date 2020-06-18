@@ -13,6 +13,18 @@ type Query {
     book: [Book!]! @all
 }
 
+type Mutation{
+    createUser(name: String!, email: String!): User @create
+    deleteUser(id: ID!): User @delete
+
+    createComment(name: String, text: String!): Comment @create
+    updateComment(id: ID! , emotion: String): Comment @update
+    deleteComment(id: ID!): Comment @delete
+
+    createBook(suggest: String!,bookisnb: String!): Book @create
+    updateBook(id: ID, suggest: String): Book @update
+    
+}
 
 type User {
     id: ID!
@@ -20,18 +32,22 @@ type User {
     email: String!
     created_at: DateTime!
     updated_at: DateTime!
+    books: [Book!]! @hasMany
 }
 type Book{
     id: ID!
-    comment: [Comment!]! @all
+    bookisnb: String
+    author: User! @belongsTo
     suggest: String
     created_at: DateTime
     updated_at: DateTime
+    comments: [Comment!]! @hasMany
 }
 type Comment {
   id: ID!
   text: String!
   name: String
+  book: Book! @belongsTo
   created_at: DateTime
   updated_at: DateTime
 }

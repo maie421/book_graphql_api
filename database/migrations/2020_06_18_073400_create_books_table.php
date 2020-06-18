@@ -15,7 +15,9 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('suggest');
+            $table->string('bookisnb');
+            $table->unsignedBigInteger('author_id')->nullable();
+            $table->string('suggest')->nullable();
             $table->timestamps();
         });
     }
