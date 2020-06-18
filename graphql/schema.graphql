@@ -10,14 +10,15 @@ scalar DateTimeTz @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Da
 type Query {
     users: [User!]! @paginate(defaultCount: 10)
     user(id: ID @eq): User @find
-    book: [Book!]! @all
+    books: [Book!]! @all
+    book(id: ID @eq): Book @find
 }
 
 type Mutation{
     createUser(name: String!, email: String!): User @create
     deleteUser(id: ID!): User @delete
 
-    createComment(name: String, text: String!): Comment @create
+    createComment(name: String, text: String!,book_id: ID!): Comment @create
     updateComment(id: ID! , emotion: String): Comment @update
     deleteComment(id: ID!): Comment @delete
 
@@ -37,7 +38,6 @@ type User {
 type Book{
     id: ID!
     bookisnb: String
-    author: User! @belongsTo
     suggest: String
     created_at: DateTime
     updated_at: DateTime
