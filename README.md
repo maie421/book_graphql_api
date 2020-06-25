@@ -14,4 +14,4 @@
 <img src="https://user-images.githubusercontent.com/35258834/85652735-7d59ec80-b6e6-11ea-97bc-0b3789f20476.png" width="30%"style="float: right;">
 </div>
 <h3>결과 데이터</h3>
-<img src="https://user-images.githubusercontent.com/35258834/85652780-98c4f780-b6e6-11ea-8fce-22551b0426c0.png" width="30%">
+<img src="https://user-images.githubusercontent.com/35258834/85652780-98c4f780-b6e6-11ea-8fce-22551b0426c0.png" width="50%">
